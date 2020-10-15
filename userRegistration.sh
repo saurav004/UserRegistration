@@ -7,22 +7,13 @@ shopt -s extglob
 #declaring pattern
 
 pat1="^[A-Z][a-z]{2,}$"
+pat2="^[a-zA-Z][a-zA-Z0-9_\-+]*[.]{0,1}[a-zA-Z0-9_\-+]{1,}[@][a-zA-Z0-9]{1,}[.][a-zA-Z]{2,}[.]{0,}[a-zA-Z]*$"
 
-#reading first and last name
-read -p "Enter your First name" Fname
-read -p "Enter your First name" Lname
+read -p "Enter valid email id" email
 
-if [[ $Fname =~ $pat ]]
+if [[ $email =~ $pat2 ]]
 then
-	echo "valid First name"
+	echo "valid email"
 else
-	echo "invalid First name"
+	echo "invalid email"
 fi
-
-if [[ $Lname =~ $pat ]]
-then
-	echo "valid Last name"
-else
-	echo "invalid Last name"
-fi
-
