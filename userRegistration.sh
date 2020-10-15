@@ -12,12 +12,13 @@ patMobileNumber="^[+]{1}[0-9]{2}[ ][0-9]{10}"
 patPassword1="^[a-zA-Z0-9]{8,}$"
 patPassword2="^(?=.*[A-Z])[a-zA-Z\d]{8,}$"
 patPassword3="^(?=.*[A-Z])(?=.*?[0-9])[a-zA-Z\d]{8,}$"
+patpassword4="^(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
 
 read -p "Enter valid password" password
 
-if [[ $password =~ $patPassword3 ]]
+if [[ $password =~ $patPassword4 ]]
 then
-	echo "valid Password according to rule 3"
+	echo "valid Password according to rule 4"
 else
 	echo "invalid"
 fi
